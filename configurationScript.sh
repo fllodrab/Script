@@ -25,9 +25,9 @@ pip install pymongo
 pip install lxml
 pip install tweepy
 
-# Recuperamos la aplicación del repositorio privado
+# Recuperamos la aplicación del repositorio
 git clone https://github.com/fllodrab/Python.git
-cd Practica3
+cd Python
 
 # Ejecutamos el servidor web de web.py
 python code.py
