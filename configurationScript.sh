@@ -26,7 +26,7 @@ pip install lxml
 pip install tweepy
 
 # Recuperamos la aplicación del repositorio privado
-git clone https://github.com/fllodrab/Practica3.git
+git clone https://github.com/fllodrab/Python.git
 cd Practica3
 
 # Ejecutamos el servidor web de web.py
