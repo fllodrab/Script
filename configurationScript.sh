@@ -1,33 +1,29 @@
 #!/bin/bash
 
-# Instalación de los paquetes necesarios
-sudo apt-get install -y python-virtualenv
-sudo apt-get install -y git
+cd ../
+
+sudo apt-get update
+sudo apt-get install -y language-pack-en
+sudo apt-get install -y build-essential
 sudo apt-get install -y python-dev
-sudo apt-get install -y libxml2-dev libxslt-dev
+sudo apt-get install -y python-setuptools
 
-# Variable de entorno necesaria para twitter
-export LC_ALL=C
-
-# Creación del entorno virtual Python
-cd ~
-mkdir env
-cd env
-virtualenv --distribute env1
-cd env1/
-source bin/activate
-
-# Instalación de los paquetes Python necesarios
-# dentro del entorno virtual
-pip install web.py
-pip install mako
-pip install pymongo
-pip install lxml
-pip install tweepy
+# Instalar web.py
+sudo easy_install web.py
+#Instalar lenguaje de templating
+sudo easy_install mako
+#Instalar driver para mongodb-server
+sudo easy_install pymongo
+#Instalar interfaz de twitter
+sudo easy_install tweepy
+# Instalar el feedparser
+sudo easy_install feedparser
 
 # Recuperamos la aplicación del repositorio
 git clone https://github.com/fllodrab/Python.git
 cd Python
+chmod +x p4RSS.py
+# Para que el script siga ejecutando despues de que salga de ssh
+sudo nohup ./p4RSS.py 80 &
 
-# Ejecutamos el servidor web de web.py
-python code.py
+
